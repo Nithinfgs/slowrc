@@ -1,0 +1,4 @@
+#!/bin/sh
+# Simulated `pyenv init -`: slow, then prints a harmless snippet to eval.
+sleep 0.11
+echo 'export PYENV_SHELL=zsh'
