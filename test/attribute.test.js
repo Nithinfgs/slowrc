@@ -42,7 +42,7 @@ test('zsh: functions push and pop, and later startup files reset the stack', () 
   assert.equal(sortedChildren(call)[0].file, 'f');
 });
 
-test('bash: explicit depth drives nesting and is normalised to start at 0', () => {
+test('bash: explicit depth drives nesting; the -c string (depth 0) is a sibling of top-level files', () => {
   const b = (t, depth, file, line) => ({ t, depth, file, line, cmd: '' });
   const entries = [
     b(0.0, 1, '/h/.bash_profile', 1),
@@ -51,11 +51,13 @@ test('bash: explicit depth drives nesting and is normalised to start at 0', () =
     b(0.4, 2, '/h/.bashrc', 2),
     b(0.5, 1, '/h/.bash_profile', 3),
     b(0.5, 1, '/h/.bash_profile', 4),
+    b(0.6, 0, '', 1),
   ];
   const { root } = buildTree(entries, SHELLS.bash);
   const src = sortedChildren(root).find((n) => n.line === 2);
   assert.ok(Math.abs(src.incl - 400) < 1e-6);
   assert.equal(sortedChildren(src).length, 2);
+  assert.equal(src.file, '/h/.bash_profile');
 });
 
 test('empty trace yields an empty tree', () => {

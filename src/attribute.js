@@ -2,15 +2,17 @@ import path from 'node:path';
 
 /**
  * Assign a nesting depth to every entry.
- *  - bash reports depth itself (normalised so the shallowest entry is 0).
+ *  - bash reports depth itself (BASH_SOURCE length).
  *  - zsh reports only the file or function name, so depth comes from a stack:
  *    startup files (.zshrc, ...) reset it, a name already on the stack pops
  *    back to it, anything else is a nested `source` or function call.
  */
 export function assignDepths(entries, shell) {
   if (entries.length && entries.every((e) => e.depth !== null)) {
-    const min = Math.min(...entries.map((e) => e.depth));
-    for (const e of entries) e.depth -= min;
+    // BASH_SOURCE has one element per sourced file or function call, so a
+    // top-level startup file is at 1. The -c string itself is at 0; it is a
+    // sibling of those files, not their parent.
+    for (const e of entries) e.depth = Math.max(e.depth, 1) - 1;
     return entries;
   }
   const roots = new Set(shell.rootFiles);
