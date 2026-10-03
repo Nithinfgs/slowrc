@@ -22,7 +22,7 @@ test('bash 5+: attributes a slow sourced file to the line that sources it', { sk
     const code = await main(['--shell', 'bash', '--mode', 'interactive', '--json', '--runs', '1'], io);
     assert.equal(code, 0);
     const j = JSON.parse(out);
-    const top = j.top.find((t) => /\.bashrc$/.test(t.file));
+    const top = j.top.find((t) => t.file === '~/.bashrc');
     assert.equal(top.line, 2);
     assert.ok(top.inclMs > 200, `expected >200ms, got ${top.inclMs}`);
   } finally {
