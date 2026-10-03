@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="777" height="604" viewBox="0 0 777 604" role="img" aria-label="Terminal output of slowrc --demo --whatif">
+<rect width="777" height="604" rx="8" fill="#0d1117"/>
+<rect width="777" height="28" rx="8" fill="#161b22"/>
+<rect y="14" width="777" height="14" fill="#161b22"/>
+<circle cx="16" cy="14" r="5" fill="#ff5f56"/><circle cx="34" cy="14" r="5" fill="#ffbd2e"/><circle cx="52" cy="14" r="5" fill="#27c93f"/>
+<g font-family="SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="13">
+<text y="59" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9" font-weight="700">slowrc</tspan><tspan x="64.8" fill="#c9d1d9"> </tspan><tspan x="72.6" fill="#7d8590">0.1.0</tspan><tspan x="111.6" fill="#c9d1d9">  zsh 5.9 · interactive · 5 runs</tspan></text>
+<text y="77" xml:space="preserve"></text>
+<text y="95" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">startup  </tspan><tspan x="88.2" fill="#c9d1d9" font-weight="700">614 ms</tspan><tspan x="135.0" fill="#c9d1d9"> median   </tspan><tspan x="213.0" fill="#7d8590">min 606  max 635</tspan></text>
+<text y="113" xml:space="preserve"></text>
+<text y="131" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9" font-weight="700">where the time goes</tspan><tspan x="166.2" fill="#7d8590">  (xtrace estimate; --whatif measures)</tspan></text>
+<text y="149" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#ff7b72">███████</tspan><tspan x="88.2" fill="#484f58">░░░░░░░</tspan><tspan x="142.8" fill="#c9d1d9">  49%   297 ms  &lt;demo&gt;/.zshrc:7  [ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; source "$NVM_DIR/…</tspan></text>
+<text y="167" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#7d8590">              </tspan><tspan x="142.8" fill="#c9d1d9">      </tspan><tspan x="189.6" fill="#7d8590">  229 ms  └ &lt;demo&gt;/nvm/nvm.sh:3  sleep 0.22</tspan></text>
+<text y="185" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">                       </tspan><tspan x="197.4" fill="#e3b341">↳ fix:</tspan><tspan x="244.2" fill="#c9d1d9"> lazy-load nvm so it only runs on first use of node/npm</tspan></text>
+<text y="203" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#ff7b72">████</tspan><tspan x="64.8" fill="#484f58">░░░░░░░░░░</tspan><tspan x="142.8" fill="#c9d1d9">  25%   153 ms  &lt;demo&gt;/.zshrc:16  source "$SLOWRC_DEMO/conda.sh"</tspan></text>
+<text y="221" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#7d8590">              </tspan><tspan x="142.8" fill="#c9d1d9">      </tspan><tspan x="189.6" fill="#7d8590">  152 ms  └ &lt;demo&gt;/conda.sh:2  sleep 0.14</tspan></text>
+<text y="239" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">                       </tspan><tspan x="197.4" fill="#e3b341">↳ fix:</tspan><tspan x="244.2" fill="#c9d1d9"> turn off auto-activate and load conda lazily</tspan></text>
+<text y="257" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#ff7b72">███</tspan><tspan x="57.0" fill="#484f58">░░░░░░░░░░░</tspan><tspan x="142.8" fill="#c9d1d9">  21%   127 ms  &lt;demo&gt;/.zshrc:10  eval "$(pyenv init -)"</tspan></text>
+<text y="275" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">                       </tspan><tspan x="197.4" fill="#e3b341">↳ fix:</tspan><tspan x="244.2" fill="#c9d1d9"> init with --no-rehash, or load the version manager lazily</tspan></text>
+<text y="293" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#ff7b72">█</tspan><tspan x="41.4" fill="#484f58">░░░░░░░░░░░░░</tspan><tspan x="142.8" fill="#c9d1d9">   4%    25 ms  &lt;demo&gt;/.zshrc:13  autoload -Uz compinit &amp;&amp; compinit</tspan></text>
+<text y="311" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#7d8590">              </tspan><tspan x="142.8" fill="#c9d1d9">      </tspan><tspan x="189.6" fill="#7d8590">   13 ms  └ compinit:492  . /private/var/folders/m4/lg2…</tspan></text>
+<text y="329" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">                       </tspan><tspan x="197.4" fill="#e3b341">↳ fix:</tspan><tspan x="244.2" fill="#c9d1d9"> use `compinit -C` and rebuild the dump once a day</tspan></text>
+<text y="347" xml:space="preserve"></text>
+<text y="365" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9" font-weight="700">time spent inside each file</tspan><tspan x="228.6" fill="#7d8590">  (own commands only)</tspan></text>
+<text y="383" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">    230 ms  &lt;demo&gt;/nvm/nvm.sh</tspan></text>
+<text y="401" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">    152 ms  &lt;demo&gt;/conda.sh</tspan></text>
+<text y="419" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">    131 ms  &lt;demo&gt;/.zshrc</tspan></text>
+<text y="437" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">     65 ms  nvm_auto</tspan></text>
+<text y="455" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">      9 ms  compaudit</tspan></text>
+<text y="473" xml:space="preserve"></text>
+<text y="491" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9" font-weight="700">what-if: switch one line off, re-measure</tspan><tspan x="330.0" fill="#7d8590">  (5 interleaved rounds, baseline 617 ms, noise ±6 ms)</tspan></text>
+<text y="509" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#56d364">saves  300 ms (−49%) </tspan><tspan x="197.4" fill="#c9d1d9"> &lt;demo&gt;/.zshrc:7  [ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; source "$NVM_DIR/…</tspan></text>
+<text y="527" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#56d364">saves  155 ms (−25%) </tspan><tspan x="197.4" fill="#c9d1d9"> &lt;demo&gt;/.zshrc:16  source "$SLOWRC_DEMO/conda.sh"</tspan></text>
+<text y="545" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#56d364">saves  129 ms (−21%) </tspan><tspan x="197.4" fill="#c9d1d9"> &lt;demo&gt;/.zshrc:10  eval "$(pyenv init -)"</tspan></text>
+<text y="563" xml:space="preserve"><tspan x="18.0" fill="#c9d1d9">  </tspan><tspan x="33.6" fill="#56d364">saves   25 ms (−4%)  </tspan><tspan x="197.4" fill="#c9d1d9"> &lt;demo&gt;/.zshrc:13  autoload -Uz compinit &amp;&amp; compinit</tspan></text>
+<text y="581" xml:space="preserve"><tspan x="18.0" fill="#7d8590">  Your dotfiles were not modified; this ran on a temporary copy.</tspan></text>
+</g>
+</svg>
