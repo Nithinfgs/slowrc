@@ -1,0 +1,21 @@
+{
+  "name": "slowrc",
+  "version": "0.1.0",
+  "description": "Find out why your shell takes so long to start, and measure what each fix would really save.",
+  "type": "module",
+  "bin": { "slowrc": "bin/slowrc.js" },
+  "files": ["bin", "src", "examples", "docs/assets/demo.svg", "README.md", "LICENSE"],
+  "engines": { "node": ">=18.3" },
+  "scripts": {
+    "test": "node --test",
+    "lint": "node scripts/lint.js",
+    "demo": "node bin/slowrc.js --demo --whatif",
+    "svg": "node scripts/make-demo-svg.js"
+  },
+  "keywords": ["zsh", "bash", "shell", "startup", "profiler", "dotfiles", "performance", "cli", "developer-tools"],
+  "author": "Nithinfgs",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "git+https://github.com/Nithinfgs/slowrc.git" },
+  "homepage": "https://github.com/Nithinfgs/slowrc#readme",
+  "bugs": { "url": "https://github.com/Nithinfgs/slowrc/issues" }
+}
